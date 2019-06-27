@@ -1,9 +1,9 @@
 import { combineReducers } from "redux"
 import RequestStatusStore from "./RequestStatus"
-import TodoListStore from "components/TodoContainer/reducers/todoListStore"
+import FontListStore from "components/StyleContainer/reducers/fontListStore"
 
 const rootReducer = combineReducers({
-  TodoListStore,
+  FontListStore,
   RequestStatusStore
 })
 

@@ -2,18 +2,18 @@ import React from "react"
 import { string, shape, arrayOf, number } from "prop-types"
 import "./style.less"
 
-const TodoList = ({ todos = [] }) => (
+const FontList = ({ fonts = [] }) => (
   <div className="TodoList__Container">
     <ol className="TodoList">
-      {todos.map(({ id, title }) => (
-        <li key={id}>{title}</li>
+      {fonts.map(({ family, category }) => (
+        <li key={`${family}_${category}`}>{`${family}; ${category}`}</li>
       ))}
     </ol>
   </div>
 )
 
-TodoList.propTypes = {
-  todos: arrayOf(
+FontList.propTypes = {
+  fonts: arrayOf(
     shape({
       id: number,
       title: string
@@ -21,4 +21,4 @@ TodoList.propTypes = {
   )
 }
 
-export default TodoList
+export default FontList
