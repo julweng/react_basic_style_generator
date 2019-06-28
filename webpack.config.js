@@ -1,6 +1,7 @@
 const path = require("path")
+const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-const DotenvPlugin = require('webpack-dotenv-plugin')
+const DotenvPlugin = require("webpack-dotenv-plugin")
 
 module.exports = {
   entry: "./src/index.js",
@@ -32,6 +33,9 @@ module.exports = {
     new DotenvPlugin({
       sample: path.resolve(__dirname, ".env.default"),
       path: path.resolve(__dirname, ".env")
+    }),
+    new webpack.DefinePlugin({
+      SERVER_URL: JSON.stringify(process.env.SERVER_URL)
     })
   ],
   resolve: {
@@ -41,7 +45,8 @@ module.exports = {
       components: path.resolve(__dirname, "src/components/"),
       style: path.resolve(__dirname, "src/style/"),
       reducers: path.resolve(__dirname, "src/reducers"),
-      __testing__: path.resolve(__dirname, "__testing__")
+      __testing__: path.resolve(__dirname, "__testing__"),
+      __mocks__: path.resolve(__dirname, "__mocks__")
     }
   }
 }

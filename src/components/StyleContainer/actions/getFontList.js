@@ -27,7 +27,7 @@ const getFontList = () => {
   return dispatch => {
     dispatch(getFontListRequest())
 
-    axios
+    return axios
       .get(`https://www.googleapis.com/webfonts/v1/webfonts?key=${API_KEY}`)
       .then(
         res => {
@@ -35,10 +35,7 @@ const getFontList = () => {
         },
         err => dispatch(getFontListFailure(err))
       )
-
-      .catch(err => {
-        dispatch(dispatch(getFontListFailure(err)))
-      })
+      .catch(err => dispatch(getFontListFailure(err)))
   }
 }
 
