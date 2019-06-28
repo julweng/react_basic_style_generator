@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { shape, arrayOf, func } from "prop-types"
 import { connect } from "react-redux"
+import { dataErrorSelector } from "reducers/DataStatus/selectors"
 import { getFontList } from "./actions"
 import { fontListSelector } from "./reducers/selectors"
 import { FontList } from "components"
@@ -12,7 +13,6 @@ class StyleContainer extends Component {
 
   render() {
     const { fonts } = this.props
-    console.log(fonts)
     return (
       <div className="TodoContainer">
         {fonts.length === 0 ? (
@@ -31,7 +31,8 @@ StyleContainer.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  fonts: fontListSelector(state)
+  fonts: fontListSelector(state),
+  error: dataErrorSelector(state)
 })
 
 const mapDispatchToProps = {

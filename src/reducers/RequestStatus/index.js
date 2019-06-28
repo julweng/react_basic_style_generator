@@ -1,7 +1,7 @@
 import { combineReducers } from "redux"
 
-import LoadingStore from "./LoadingStore"
-import ErrorStore from "./ErrorStore"
+import LoadingStore from "./loadingStore"
+import ErrorStore from "./errorStore"
 
 const RequestStatusStore = combineReducers({
   LoadingStore,
