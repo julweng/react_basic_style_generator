@@ -2,7 +2,7 @@ import React from "react"
 import { string, shape, arrayOf, number } from "prop-types"
 import "./style.less"
 
-const FontList = ({ fonts = [] }) => (
+const StyleItem = ({ fonts = [] }) => (
   <div className="TodoList__Container">
     <ol className="TodoList">
       {fonts.map(({ family, category }) => (
@@ -12,7 +12,7 @@ const FontList = ({ fonts = [] }) => (
   </div>
 )
 
-FontList.propTypes = {
+StyleItem.propTypes = {
   fonts: arrayOf(
     shape({
       id: number,
@@ -21,4 +21,4 @@ FontList.propTypes = {
   )
 }
 
-export default FontList
+export default StyleItem

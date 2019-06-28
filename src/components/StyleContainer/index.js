@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import { dataErrorSelector } from "reducers/DataStatus/selectors"
 import { getFontList } from "./actions"
 import { fontListSelector } from "./reducers/selectors"
-import { FontList } from "components"
+import { StyleItem } from "components"
 
 class StyleContainer extends Component {
   componentDidMount() {
@@ -18,7 +18,7 @@ class StyleContainer extends Component {
         {fonts.length === 0 ? (
           <p>Nothing to see here!</p>
         ) : (
-          <FontList fonts={fonts} />
+          <StyleItem fonts={fonts} />
         )}
       </div>
     )
