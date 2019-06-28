@@ -9,7 +9,7 @@ const defaultState = {
 }
 
 export default function FontListStore(state = defaultState, action = {}) {
-  const { type, fonts } = action
+  const { type, fonts, selectedFont } = action
   switch (type) {
     case ActionTypes.GET_FONT_LIST_SUCCESS:
       return {

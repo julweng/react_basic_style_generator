@@ -10,12 +10,11 @@ const getFontListRequest = () => {
   }
 }
 
-const getFontListSuccess = fonts => {
-  return {
-    type: ActionTypes.GET_FONT_LIST_SUCCESS,
-    fonts
-  }
-}
+const getFontListSuccess = (fonts, selectedFont) => ({
+  type: ActionTypes.GET_FONT_LIST_SUCCESS,
+  fonts,
+  selectedFont
+})
 
 const getFontListFailure = err => {
   return {
@@ -24,7 +23,7 @@ const getFontListFailure = err => {
   }
 }
 
-const getFontList = () => {
+const getFontList = (selectedFont = {}) => {
   return dispatch => {
     dispatch(getFontListRequest())
 
@@ -32,7 +31,7 @@ const getFontList = () => {
       .get(`https://www.googleapis.com/webfonts/v1/webfonts?key=${API_KEY}`)
       .then(
         res => {
-          dispatch(getFontListSuccess(res.data.items))
+          dispatch(getFontListSuccess(res.data.items, selectedFont))
         },
         err => {
           dispatch(getFontListFailure(err))

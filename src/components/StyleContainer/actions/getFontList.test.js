@@ -35,7 +35,8 @@ describe("getFontList", () => {
       },
       {
         type: ActionTypes.GET_FONT_LIST_SUCCESS,
-        fonts: mockData.data.items
+        fonts: mockData.data.items,
+        selectedFont: {}
       }
     ])
   })
