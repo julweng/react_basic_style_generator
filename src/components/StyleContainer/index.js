@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import { dataErrorSelector } from "reducers/DataStatus/selectors"
 import { getFontList } from "./actions"
 import { fontListSelector } from "./reducers/selectors"
-import { StyleItem } from "components"
+import { StyleItem } from "./components/StyleItem"
 
 class StyleContainer extends Component {
   componentDidMount() {
