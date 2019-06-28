@@ -54,6 +54,10 @@ describe("getFontList", () => {
       {
         type: ActionTypes.GET_FONT_LIST_FAILURE,
         err
+      },
+      {
+        type: "HANDLE_DATA_ERROR",
+        message: "Failed to get fonts"
       }
     ])
   })

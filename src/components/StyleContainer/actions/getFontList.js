@@ -1,5 +1,6 @@
 import axios from "axios"
 import ActionTypes from "./actionTypes"
+import { handleDataError } from "actions"
 
 const API_KEY = process.env.API_KEY
 
@@ -33,9 +34,12 @@ const getFontList = () => {
         res => {
           dispatch(getFontListSuccess(res.data.items))
         },
-        err => dispatch(getFontListFailure(err))
+        err => {
+          dispatch(getFontListFailure(err))
+          dispatch(handleDataError(err.message))
+        }
       )
-      .catch(err => dispatch(getFontListFailure(err)))
+      .catch(err => dispatch(handleDataError(err.message)))
   }
 }
 
