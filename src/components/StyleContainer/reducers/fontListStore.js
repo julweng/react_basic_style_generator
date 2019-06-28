@@ -14,7 +14,8 @@ export default function FontListStore(state = defaultState, action = {}) {
     case ActionTypes.GET_FONT_LIST_SUCCESS:
       return {
         ...state,
-        fonts
+        fonts,
+        selectedFont
       }
     default:
       return defaultState
