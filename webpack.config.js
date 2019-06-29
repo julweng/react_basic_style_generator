@@ -46,7 +46,7 @@ module.exports = {
       style: path.resolve(__dirname, "src/style/"),
       reducers: path.resolve(__dirname, "src/reducers"),
       actions: path.resolve(__dirname, "src/actions"),
-      constant: path.resolve(__dirname, "src/constant")
+      constant: path.resolve(__dirname, "src/constant"),
       __testing__: path.resolve(__dirname, "__testing__"),
       __mocks__: path.resolve(__dirname, "__mocks__")
     }
