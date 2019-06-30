@@ -6,19 +6,19 @@ const API_KEY = process.env.API_KEY
 
 const getFontListRequest = () => {
   return {
-    type: ActionTypes.GET_FONT_LIST_REQUEST
+    type: ActionTypes.GET_FONTS_REQUEST
   }
 }
 
 const getFontListSuccess = (fonts, selectedFont) => ({
-  type: ActionTypes.GET_FONT_LIST_SUCCESS,
+  type: ActionTypes.GET_FONTS_SUCCESS,
   fonts,
   selectedFont
 })
 
 const getFontListFailure = err => {
   return {
-    type: ActionTypes.GET_FONT_LIST_FAILURE,
+    type: ActionTypes.GET_FONTS_FAILURE,
     err
   }
 }

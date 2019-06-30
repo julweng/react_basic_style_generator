@@ -1,24 +1,13 @@
 import React from "react"
-import { string, shape, arrayOf, number } from "prop-types"
-import "./style.less"
+import { string, shape } from "prop-types"
 
-const StyleItem = ({ fonts = [] }) => (
-  <div className="TodoList__Container">
-    <ol className="TodoList">
-      {fonts.map(({ family, category }) => (
-        <li key={`${family}_${category}`}>{`${family}; ${category}`}</li>
-      ))}
-    </ol>
-  </div>
-)
+const StyleItem = ({ side }) => {
+  return <div className={side}>Happy picking!</div>
+}
 
 StyleItem.propTypes = {
-  fonts: arrayOf(
-    shape({
-      id: number,
-      title: string
-    })
-  )
+  side: string,
+  style: shape({})
 }
 
 export default StyleItem

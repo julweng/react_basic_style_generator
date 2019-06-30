@@ -1,11 +1,15 @@
 import mockAxios from "axios"
 import { mockStore } from "__testing__"
 import ActionTypes from "./actionTypes"
-import getFontList from "./getFontList"
+import getFonts from "./getFonts"
 
 const store = mockStore({
-  FontListStore: {
-    fonts: []
+  FontStore: {
+    fonts: [],
+    selectedFont: {
+      left: {},
+      right: {}
+    }
   }
 })
 
@@ -18,7 +22,7 @@ const mockData = {
   }
 }
 
-describe("getFontList", () => {
+describe("getFonts", () => {
   afterEach(() => {
     store.clearActions()
   })
@@ -26,15 +30,15 @@ describe("getFontList", () => {
   it("Should dispatch request and success actions to get fonts", async () => {
     mockAxios.get.mockResolvedValue(mockData)
 
-    await store.dispatch(getFontList())
+    await store.dispatch(getFonts())
     const actions = store.getActions()
 
     expect(actions).toEqual([
       {
-        type: ActionTypes.GET_FONT_LIST_REQUEST
+        type: ActionTypes.GET_FONTS_REQUEST
       },
       {
-        type: ActionTypes.GET_FONT_LIST_SUCCESS,
+        type: ActionTypes.GET_FONTS_SUCCESS,
         fonts: mockData.data.items,
         selectedFont: {}
       }
@@ -45,15 +49,15 @@ describe("getFontList", () => {
     const err = new Error("Failed to get fonts")
     mockAxios.get.mockRejectedValueOnce(err)
 
-    await store.dispatch(getFontList())
+    await store.dispatch(getFonts())
     const actions = store.getActions()
 
     expect(actions).toEqual([
       {
-        type: ActionTypes.GET_FONT_LIST_REQUEST
+        type: ActionTypes.GET_FONTS_REQUEST
       },
       {
-        type: ActionTypes.GET_FONT_LIST_FAILURE,
+        type: ActionTypes.GET_FONTS_FAILURE,
         err
       },
       {

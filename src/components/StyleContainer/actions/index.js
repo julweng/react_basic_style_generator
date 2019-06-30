@@ -1,2 +1,4 @@
-export getFontList from "./getFontList"
+export getFonts from "./getFonts"
+export updateFont from "./updateFont"
 export getColor from "./getColor"
+export updateColor from "./updateColor"

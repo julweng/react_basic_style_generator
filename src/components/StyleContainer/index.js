@@ -2,24 +2,32 @@ import React, { Component } from "react"
 import { shape, arrayOf, func } from "prop-types"
 import { connect } from "react-redux"
 import { dataErrorSelector } from "reducers/DataStatus/selectors"
-import { getFontList } from "./actions"
-import { fontListSelector } from "./reducers/selectors"
-import { StyleItem } from "./components/StyleItem"
+import { getFonts, getColor } from "./actions"
+import {
+  fontsSelector,
+  leftFontSelector,
+  rightFontSelector,
+  leftColorSelector,
+  rightColorSelector
+} from "./reducers/selectors"
+import StyleItem from "./components/StyleItem"
+import "./style.less"
 
 class StyleContainer extends Component {
   componentDidMount() {
-    this.props.getFontList()
+    this.props.getFonts()
+    this.props.getColor()
   }
 
   render() {
-    const { fonts } = this.props
     return (
-      <div className="TodoContainer">
-        {fonts.length === 0 ? (
-          <p>Nothing to see here!</p>
-        ) : (
-          <StyleItem fonts={fonts} />
-        )}
+      <div className="main">
+        <div className="header">
+          <h1>Coolor Text</h1>
+        </div>
+        <StyleItem side="left" />
+        <StyleItem side="right" />
+        <div className="footer">Some disclaimer</div>
       </div>
     )
   }
@@ -27,16 +35,22 @@ class StyleContainer extends Component {
 
 StyleContainer.propTypes = {
   fonts: arrayOf(shape({})),
-  getFontList: func
+  getFonts: func,
+  getColor: func
 }
 
 const mapStateToProps = state => ({
-  fonts: fontListSelector(state),
+  fonts: fontsSelector(state),
+  leftFont: leftFontSelector(state),
+  leftColor: leftColorSelector(state),
+  rightFont: rightFontSelector(state),
+  rightColor: rightColorSelector(state),
   error: dataErrorSelector(state)
 })
 
 const mapDispatchToProps = {
-  getFontList
+  getFonts,
+  getColor
 }
 
 export default connect(

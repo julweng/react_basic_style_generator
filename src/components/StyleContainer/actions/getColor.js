@@ -1,10 +1,10 @@
 import ActionTypes from "./actionTypes"
+import initialColorScheme from "constants/initialColorScheme"
 
-const getColor = (color, side = "") => {
+const getColor = () => {
   return {
     type: ActionTypes.GET_COLOR,
-    color,
-    side
+    colors: initialColorScheme
   }
 }
 

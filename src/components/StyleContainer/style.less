@@ -1,0 +1,32 @@
+.main {
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "left right"
+    "footer footer";
+
+  div {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .header {
+    grid-area: header;
+    height: 3.125rem;
+  }
+
+  .left {
+    grid-area: left;
+  }
+
+  .right {
+    grid-area: right;
+  }
+
+  .footer {
+    grid-area: footer;
+    height: 3.125rem;
+    font-size: 1.25rem;
+  }
+}
+

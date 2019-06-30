@@ -1,4 +1,4 @@
-const colorScheme = [
+const initialColorScheme = [
   {
     left: {
       fontColor: "#72A9CB",
@@ -100,4 +100,4 @@ const colorScheme = [
     }
   }
 ]
-export default colorScheme
+export default initialColorScheme

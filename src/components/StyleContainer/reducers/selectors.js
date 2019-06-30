@@ -1,1 +1,2 @@
-export { fontListSelector } from "./fontListStore"
+export { fontsSelector, leftFontSelector, rightFontSelector } from "./fontStore"
+export { leftColorSelector, rightColorSelector } from "./colorStore"
