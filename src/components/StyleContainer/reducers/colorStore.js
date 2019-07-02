@@ -4,7 +4,7 @@ import initialColorScheme from "constants/initialColorScheme"
 
 import ActionTypes from "components/StyleContainer/actions/actionTypes"
 
-const getStore = rootState => get(rootState, "ColorStore", {})
+const getStore = rootState => get(rootState, "StyleStore.ColorStore", {})
 
 const defaultState = {
   color: {
@@ -36,7 +36,7 @@ export default function ColorStore(state = defaultState, action = {}) {
         }
       }
     default:
-      return defaultState
+      return state
   }
 }
 

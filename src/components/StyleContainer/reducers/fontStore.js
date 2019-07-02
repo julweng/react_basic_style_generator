@@ -1,9 +1,10 @@
 import { createSelector } from "reselect"
 import { get, sortBy } from "lodash"
-import { formatRandomFont } from "./functions"
+import { createLoadingSelector } from "reducers/RequestStatus/loadingStore"
+import { formatRandomFont } from "../functions"
 import ActionTypes from "../actions/actionTypes"
 
-const getStore = rootState => get(rootState, "FontStore", {})
+const getStore = rootState => get(rootState, "StyleStore.FontStore", {})
 
 const defaultState = {
   fonts: [],
@@ -26,7 +27,7 @@ export default function FontStore(state = defaultState, action = {}) {
         }
       }
 
-    case ActionTypes.UPDATE_FONT:
+    case ActionTypes.UPDATE_FONT: {
       return {
         ...state,
         selectedFont: {
@@ -34,9 +35,9 @@ export default function FontStore(state = defaultState, action = {}) {
           [side]: formatRandomFont(fonts)
         }
       }
-
+    }
     default:
-      return defaultState
+      return state
   }
 }
 
@@ -54,3 +55,5 @@ export const rightFontSelector = createSelector(
   getStore,
   state => get(state, "selectedFont.right", {})
 )
+
+export const getFontsLoadingSelector = createLoadingSelector("GET_FONTS")

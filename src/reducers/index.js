@@ -1,10 +1,10 @@
 import { combineReducers } from "redux"
 import RequestStatusStore from "./RequestStatus"
-import FontStore from "components/StyleContainer/reducers/fontStore"
+import StyleStore from "components/StyleContainer/reducers"
 import { DataStatusStore } from "./DataStatus"
 
 const rootReducer = combineReducers({
-  FontStore,
+  StyleStore,
   RequestStatusStore,
   DataStatusStore
 })

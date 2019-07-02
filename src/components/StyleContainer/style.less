@@ -1,32 +1,39 @@
+@textColor: #F7F7FF;
+@backgroundColor: #6b6b6e;
+@darkerBackgroundColor: darken(@backgroundColor, 20%);
+@textShadow: darken(@darkerBackgroundColor, 50%);
+
 .main {
-  display: grid;
-  grid-template-areas: 
-    "header header"
-    "left right"
-    "footer footer";
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
 
-  div {
-    text-align: center;
-    padding: 20px;
+  header, footer {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
   }
 
-  .header {
-    grid-area: header;
-    height: 3.125rem;
+  header {
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: left;
+    padding-left: 3.5rem;
+    background-color: @backgroundColor;
+    color: @textColor;
+    text-shadow: 2px 2px #000;
+    height: 20vh;
   }
 
-  .left {
-    grid-area: left;
+  .style__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 70vh;
   }
 
-  .right {
-    grid-area: right;
-  }
-
-  .footer {
-    grid-area: footer;
-    height: 3.125rem;
-    font-size: 1.25rem;
+  footer {
+    background-color: @darkerBackgroundColor;
+    color: @textColor;
+    height: 10vh;
   }
 }
-

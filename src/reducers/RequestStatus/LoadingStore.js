@@ -1,11 +1,11 @@
 import { createSelector } from "reselect"
 import { get } from "lodash"
 
-const getStore = rootState => rootState.RequestStatus.loadingStore
+const getStore = rootState => rootState.RequestStatusStore.LoadingStore
 
 const defaultState = {}
 
-export default function loadingStore(state = defaultState, action) {
+export default function LoadingStore(state = defaultState, action) {
   const { type, busyId, busyIds } = action
   const match = /(.*)_(REQUEST|SUCCESS|FAILURE)$/.exec(type)
 
@@ -56,7 +56,7 @@ export const createLoadingSelector = input => {
   // returns a new selector to tell if some of the actions are loading
   return createSelector(
     getStore,
-    state => actions.some(action => get(state, action))
+    state => actions.some(action => get(state, action, {}))
   )
 }
 
@@ -69,5 +69,5 @@ export const createLoadingSelector = input => {
 export const createIdsLoadingSelector = actionName =>
   createSelector(
     getStore,
-    state => get(state, actionName) || {}
+    state => get(state, actionName, {})
   )

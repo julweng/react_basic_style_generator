@@ -1,11 +1,11 @@
 import { createSelector } from "reselect"
 import { get } from "lodash"
 
-const getStore = rootState => rootState.RequestStatus.errorStore
+const getStore = rootState => rootState.RequestStatusStore.ErrorStore
 
 const defaultState = {}
 
-export default function errorStore(state = defaultState, action) {
+export default function ErrorStore(state = defaultState, action) {
   const { type, busyId, busyIds } = action
   const match = /(.*)_(REQUEST|SUCCESS|FAILURE)$/.exec(type)
 

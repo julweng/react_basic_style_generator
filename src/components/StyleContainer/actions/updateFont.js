@@ -1,18 +1,17 @@
+import { find } from "lodash"
 import ActionTypes from "./actionTypes"
 
-const updateFont = (
-  state,
-  side = "",
-  family = "",
-  category = "",
-  variant = ""
-) => {
-  const isStyleSpecified = family && category && variant
-  const fonts = isStyleSpecified ? [{ family, category, variant }] : state.fonts
+const updateFont = (fonts, side = "", family = "", variant = "") => {
+  const selectedFont = find(fonts, ["family", family])
+
+  if (selectedFont) {
+    selectedFont.variant = variant
+  }
+
   return {
     type: ActionTypes.UPDATE_FONT,
     side,
-    fonts
+    fonts: selectedFont ? [selectedFont] : fonts
   }
 }
 

@@ -1,1 +1,0 @@
-export formatRandomFont from "./formatRandomFont"

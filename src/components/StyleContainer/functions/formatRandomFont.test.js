@@ -1,7 +1,7 @@
 import formatRandomFont from "./formatRandomFont"
 
 describe("formatRandomFont", () => {
-  it("Should return a formmated font", () => {
+  it("Should return a formatted font", () => {
     const mockFonts = [
       {
         kind: "webfonts#webfont",
@@ -9,13 +9,6 @@ describe("formatRandomFont", () => {
         family: "roboto",
         category: "sans-serif",
         variants: ["regular", "100italic"]
-      },
-      {
-        kind: "webfonts#webfont",
-        version: "v9",
-        family: "Creepster",
-        category: "serif",
-        variants: ["800"]
       }
     ]
     const font = formatRandomFont(mockFonts)
@@ -23,7 +16,14 @@ describe("formatRandomFont", () => {
     expect(Object.keys(font).includes("version")).toBeFalsy()
     expect(Object.keys(font).includes("family")).toBeTruthy()
     expect(Object.keys(font).includes("category")).toBeTruthy()
+    expect(Object.keys(font).includes("variants")).toBeTruthy()
     expect(Object.keys(font).includes("variant")).toBeTruthy()
-    expect(font.variant).toBeType("string")
+
+    expect(font).toEqual({
+      family: "roboto",
+      category: "sans-serif",
+      variants: [{ regular: "regular" }, { "100italic": "thin italic" }],
+      variant: { regular: "regular" }
+    })
   })
 })
