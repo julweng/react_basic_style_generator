@@ -1,0 +1,40 @@
+// variables
+@backgroundColor: #fafafa;
+@greenBtnColor: #4caf50;
+@darkerGreen: darken(@greenBtnColor, 20%);
+@textColor: #3f3f41;
+@borderRadius: 5px;
+@greyBtnColor: #d1d1d4;
+@darkerWhite: darken(@backgroundColor, 30%);
+@defaultFont: "Trebuchet MS", Helvetica, sans-serif;
+
+// mixins
+.selection-btn-mixin(@bg, @txtColor, @hoverBg) {
+  margin: 0.5rem;
+  width: 20%;
+  border: none;
+  background-color: @bg;
+  color: @txtColor;
+  
+  &:hover {
+    background-color: @hoverBg;
+  }
+}
+
+.cancel-btn-mixin {
+  background-color: @greyBtnColor;
+  color: @textColor;
+
+  &:hover {
+    background-color: @darkerWhite;
+  }
+}
+
+.submit-btn-mixin {
+  background-color: @greenBtnColor;
+  color: @backgroundColor;
+
+  &:hover {
+    background-color: @darkerGreen;
+  }
+}

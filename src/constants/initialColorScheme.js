@@ -91,7 +91,7 @@ const initialColorScheme = [
   },
   {
     left: {
-      ontColor: "#E0B1CB",
+      fontColor: "#E0B1CB",
       backgroundColor: "#5E548E"
     },
     right: {

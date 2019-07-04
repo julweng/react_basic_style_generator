@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import { connect } from "react-redux"
 import { URL_BEGINNING, URL_END } from "constants/fontUrl"
 import { dataErrorSelector } from "reducers/DataStatus/selectors"
-import { getFonts, getColor, updateFont } from "./actions"
+import { getFonts, getColor, updateFont, updateColor } from "./actions"
 import {
   fontsSelector,
   leftFontSelector,
@@ -13,7 +13,7 @@ import {
   rightColorSelector,
   getFontsLoadingSelector
 } from "./reducers/selectors"
-import { StyleItem } from "./components"
+import { StyleItem, Mask } from "./components"
 import { formatFontFamily, formatStyle } from "./functions"
 import "./style.less"
 
@@ -31,7 +31,8 @@ class StyleContainer extends Component {
       leftColor,
       rightColor,
       isLoadingFonts,
-      updateFont
+      updateFont,
+      updateColor
     } = this.props
 
     const leftFamily = formatFontFamily(leftFont.family)
@@ -40,8 +41,10 @@ class StyleContainer extends Component {
     const leftStyle = formatStyle(leftFont, leftColor)
     const rightStyle = formatStyle(rightFont, rightColor)
 
+    const temp = true
     return (
       <div className="main">
+        <Mask loaded={temp} />
         {!isLoadingFonts && (
           <Helmet>
             <link
@@ -51,7 +54,7 @@ class StyleContainer extends Component {
           </Helmet>
         )}
         <header>
-          <h1>CooloText</h1>
+          <h1>ColoText</h1>
         </header>
         <div className="style__container">
           <StyleItem
@@ -60,6 +63,7 @@ class StyleContainer extends Component {
             font={leftFont}
             fonts={fonts}
             updateFont={updateFont}
+            updateColor={updateColor}
           />
           <StyleItem
             side="right"
@@ -67,6 +71,7 @@ class StyleContainer extends Component {
             font={rightFont}
             fonts={fonts}
             updateFont={updateFont}
+            updateColor={updateColor}
           />
         </div>
         <footer>
@@ -81,6 +86,7 @@ StyleContainer.propTypes = {
   fonts: arrayOf(shape({})),
   getFonts: func,
   getColor: func,
+  updateColor: func,
   updateFont: func,
   leftFont: shape({
     category: string,
@@ -116,7 +122,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   getFonts,
   getColor,
-  updateFont
+  updateFont,
+  updateColor
 }
 
 export default connect(

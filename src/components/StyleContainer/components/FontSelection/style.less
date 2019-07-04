@@ -1,13 +1,9 @@
-@backgroundColor: #fafafa;
-@textColor: #3f3f41;
-@greenBtnColor: #4caf50;
-@darkerWhite: darken(@backgroundColor, 30%);
-@darkerGreen: darken(@greenBtnColor, 20%);
+@import "~styles/common.less";
+
 @margin: 2rem;
 @smallMargin: @margin - 1;
 @smallestMargin: @smallMargin - 0.6;
 @border: 1px solid @darkerWhite;
-@borderRadius: 5px;
 
 .font__selection__container {
   background-color: @backgroundColor;
@@ -18,11 +14,20 @@
   padding: 1rem;
   position: fixed;
   width: 45%;
-  top: 28%;
-  left: 1%;
   display: flex;
   flex-direction: column;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: @defaultFont;
+  z-index: 4;
+
+  &.left {
+    top: 28%;
+    left: 1%;
+  }
+
+  &.right {
+    top: 28%;
+    right: 1%;
+  }
 
   .selected__font {
     margin: @smallMargin (@smallMargin * 5);
@@ -132,28 +137,12 @@
     justify-content: center;
     margin: @margin;
 
-    button {
-      margin: 0.5rem;
-      width: 20%;
-      border: none;
-    }
-
     button:first-child {
-      background-color: #d1d1d4;
-      color: @textColor;
-
-      &:hover {
-        background-color: @darkerWhite;
-      }
+      .selection-btn-mixin(@greyBtnColor, @textColor, @darkerWhite);
     }
 
     button:last-child {
-      background-color: #4caf50;
-      color: @backgroundColor;
-
-      &:hover {
-        background-color: @darkerGreen;
-      }
+      .selection-btn-mixin(@greenBtnColor, @backgroundColor, @darkerGreen);
     }
   }
 }

@@ -1,3 +1,5 @@
+@import "~styles/common.less";
+
 @textColor: #F7F7FF;
 @backgroundColor: #6b6b6e;
 @darkerBackgroundColor: darken(@backgroundColor, 20%);
@@ -10,7 +12,7 @@
   height: 100vh;
 
   header, footer {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-family: @defaultFont;
   }
 
   header {

@@ -43,7 +43,7 @@ module.exports = {
     modules: ["node_modules"],
     alias: {
       components: path.resolve(__dirname, "src/components/"),
-      style: path.resolve(__dirname, "src/style/"),
+      styles: path.resolve(__dirname, "src/styles"),
       reducers: path.resolve(__dirname, "src/reducers"),
       actions: path.resolve(__dirname, "src/actions"),
       constants: path.resolve(__dirname, "src/constants"),

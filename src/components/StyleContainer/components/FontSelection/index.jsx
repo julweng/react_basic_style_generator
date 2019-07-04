@@ -31,7 +31,7 @@ const FontSelection = ({ close, font, fonts, updateFont, side }) => {
   }
 
   return (
-    <div className="font__selection__container">
+    <div className={`font__selection__container ${side}`}>
       {fontOptionsOpen && <Overlay />}
       <div className="selected__font" onClick={toggle}>
         <span>{selectedFont.family}</span>

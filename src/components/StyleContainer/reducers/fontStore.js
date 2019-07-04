@@ -7,7 +7,13 @@ import ActionTypes from "../actions/actionTypes"
 const getStore = rootState => get(rootState, "StyleStore.FontStore", {})
 
 const defaultState = {
-  fonts: [],
+  fonts: [
+    {
+      family: "Trebuchet MS, Helvetica",
+      category: "sans-serif",
+      variants: [{ regular: "regular" }, { italic: "italic" }]
+    }
+  ],
   selectedFont: {
     left: {},
     right: {}

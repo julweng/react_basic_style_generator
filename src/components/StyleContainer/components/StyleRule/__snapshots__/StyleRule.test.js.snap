@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyleRule Should render without crashing 1`] = `
+<div>
+  <div
+    class="style__rule__container"
+  >
+    <div>
+      <p>
+        color: "#000";
+      </p>
+      <p>
+        background-color: "#FFF";
+      </p>
+      <p>
+        font-family: "Arial", sans-serif;
+      </p>
+      <p>
+        font-style: "normal";
+      </p>
+      <p>
+        font-weight: 400;
+      </p>
+    </div>
+  </div>
+</div>
+`;
