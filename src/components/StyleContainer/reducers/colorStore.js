@@ -27,6 +27,7 @@ export default function ColorStore(state = defaultState, action = {}) {
         ...state,
         color: sample(initialColorScheme)
       }
+
     case ActionTypes.UPDATE_COLOR:
       return {
         ...state,
@@ -35,6 +36,7 @@ export default function ColorStore(state = defaultState, action = {}) {
           [side]: color
         }
       }
+
     default:
       return state
   }

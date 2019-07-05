@@ -16,26 +16,29 @@
   }
 
   header {
+    display: flex;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: left;
     padding-left: 3.5rem;
     background-color: @backgroundColor;
     color: @textColor;
     text-shadow: 2px 2px #000;
-    height: 20vh;
+
   }
 
   .style__container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 70vh;
+    flex: 1;
   }
 
   footer {
     background-color: @darkerBackgroundColor;
     color: @textColor;
-    height: 10vh;
+    display: flex;
+    justify-content: center;  
   }
 }
+

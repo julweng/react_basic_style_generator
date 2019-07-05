@@ -4,6 +4,8 @@
 @smallMargin: @margin - 1;
 @smallestMargin: @smallMargin - 0.6;
 @border: 1px solid @darkerWhite;
+@padding: 1rem;
+@smallPadding: @padding - 0.5rem;
 
 .font__selection__container {
   background-color: @backgroundColor;
@@ -13,7 +15,7 @@
   font-size: 1.25rem;
   padding: 1rem;
   position: fixed;
-  width: 45%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   font-family: @defaultFont;
@@ -21,12 +23,12 @@
 
   &.left {
     top: 28%;
-    left: 1%;
+    left: 9%;
   }
 
   &.right {
     top: 28%;
-    right: 1%;
+    right: 9%;
   }
 
   .selected__font {
@@ -77,6 +79,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    padding: 0 2rem;
     margin: @smallMargin;
     max-height: 240px;
 
@@ -135,7 +138,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: @margin;
+    margin: @smallMargin;
 
     button:first-child {
       .selection-btn-mixin(@greyBtnColor, @textColor, @darkerWhite);
@@ -144,5 +147,12 @@
     button:last-child {
       .selection-btn-mixin(@greenBtnColor, @backgroundColor, @darkerGreen);
     }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .font__selection__container {
+    padding: @smallPadding;
   }
 }

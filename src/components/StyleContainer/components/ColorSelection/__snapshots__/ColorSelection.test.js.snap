@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorSelection Should render without crashing 1`] = `
+<div>
+  <div
+    class="color__selection__container left"
+  >
+    <div
+      class="color__selection"
+    >
+      <div
+        class="background__selection"
+      >
+        <div>
+          Background
+        </div>
+        <div
+          class="CompactPickerMock"
+        >
+          #FFF
+        </div>
+      </div>
+      <div
+        class="text__selection"
+      >
+        <div>
+          Text
+        </div>
+        <div
+          class="CompactPickerMock"
+        >
+          #000
+        </div>
+      </div>
+    </div>
+    <div
+      class="submit__color__btn"
+    >
+      <button>
+        Cancel
+      </button>
+      <button>
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+`;

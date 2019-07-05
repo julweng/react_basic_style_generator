@@ -126,14 +126,14 @@ describe("FontStore selectors", () => {
   describe("leftFontSelector", () => {
     it("Should return empty object by default", () => {
       const state = undefined
-      const fonts = leftFontSelector(state)
-      expect(fonts).toEqual({})
+      const font = leftFontSelector(state)
+      expect(font).toEqual({})
     })
 
     it("Should selectively return the state of  left fonts", () => {
       const state = createRootState([], mockSelectedFont)
-      const fonts = leftFontSelector(state)
-      expect(fonts).toEqual(mockSelectedFont.left)
+      const font = leftFontSelector(state)
+      expect(font).toEqual(mockSelectedFont.left)
     })
   })
 

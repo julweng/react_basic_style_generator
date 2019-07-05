@@ -25,7 +25,7 @@ describe("StyleRule", () => {
     expect(container).toMatchSnapshot()
   })
 
-  it("Should display 7 p tags for the css rule", () => {
+  it("Should display 5 p tags for the css rule", () => {
     const props = createProps()
     const { container } = render(<StyleRule {...props} />)
     const p = container.querySelectorAll("p")

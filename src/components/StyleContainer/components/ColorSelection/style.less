@@ -9,18 +9,18 @@
   background-color: @backgroundColor;
   border-radius: @borderRadius;
   color: @textColor;
-  width: 35%;
+  width: 30%;
   border: none;
   z-index: 5;
 
   &.left {
-    top: 27%;
-    left: 13.5%;
+    top: 28%;
+    left: 9%;
   }
 
   &.right {
-    top: 27%;
-    right: 13.5%;
+    top: 28%;
+    right: 9%;
   }
 
   .color__selection {
@@ -53,6 +53,64 @@
 
     button:last-child {
       .selection-btn-mixin(@greenBtnColor, @backgroundColor, @darkerGreen);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .color__selection__container {
+    width: 40%;
+
+    &.left {
+      top: 26%;
+      left: 5%;
+    }
+  
+    &.right {
+      top: 26%;
+      right: 5%;
+    }
+
+    .color__selection {
+      flex-direction: column;
+      padding-left: 2rem;
+      .chrome-picker {
+        width: 120%;
+      }
+    }
+    .submit__color__btn {
+      flex-direction: column;
+      button {
+        width: 95% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .color__selection__container {
+    width: 85%;
+
+    &.left {
+      top: 22%;
+    }
+  
+    &.right {
+      top: 22%;
+    }
+
+    .color__selection {
+      flex-direction: column;
+      padding-left: 2.5rem;
+      .chrome-picker {
+        width: 120%;
+      }
+    }
+    .submit__color__btn {
+      flex-direction: column;
+      button {
+        width: 95% !important;
+      }
     }
   }
 }

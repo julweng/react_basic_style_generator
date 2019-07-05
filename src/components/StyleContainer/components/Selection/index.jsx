@@ -25,7 +25,7 @@ const Selection = ({
     setPaletteSelectionOpen(!paletteSelectionOpen)
 
   const handlePaletteClose = () => setPaletteSelectionOpen(false)
-  console.log(fontSelectionOpen)
+
   return (
     <div className="selection">
       {type === "font" && (

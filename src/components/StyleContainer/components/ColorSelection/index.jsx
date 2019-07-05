@@ -42,7 +42,6 @@ ColorSelection.propTypes = {
     color: string,
     backgroundColor: string
   }),
-  backgroundColor: string,
   side: string
 }
 

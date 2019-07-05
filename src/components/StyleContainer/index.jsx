@@ -19,7 +19,7 @@ import "./style.less"
 
 class StyleContainer extends Component {
   componentDidMount() {
-    this.props.getFonts()
+    //this.props.getFonts()
     this.props.getColor()
   }
 

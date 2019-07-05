@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyleItem Should render without crashing 1`] = `
+<div>
+  <div
+    class="left"
+    style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-family: Arial, sans-serif; font-weight: 400; font-style: normal;"
+  >
+    <div
+      class="selection__container"
+    >
+      <div>
+        SelectionMock
+      </div>
+      <div>
+        SelectionMock
+      </div>
+    </div>
+    <p>
+      Arial
+    </p>
+    <div>
+      StyleRuleMock
+    </div>
+  </div>
+</div>
+`;
