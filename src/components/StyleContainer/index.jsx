@@ -19,7 +19,7 @@ import "./style.less"
 
 class StyleContainer extends Component {
   componentDidMount() {
-    //this.props.getFonts()
+    this.props.getFonts()
     this.props.getColor()
   }
 
@@ -41,10 +41,9 @@ class StyleContainer extends Component {
     const leftStyle = formatStyle(leftFont, leftColor)
     const rightStyle = formatStyle(rightFont, rightColor)
 
-    const temp = true
     return (
       <div className="main">
-        <Mask loaded={temp} />
+        <Mask loaded={!isLoadingFonts} />
         {!isLoadingFonts && (
           <Helmet>
             <link
@@ -75,7 +74,7 @@ class StyleContainer extends Component {
           />
         </div>
         <footer>
-          <p>&copy; 2019 Made with &hearts; & React by Jul W</p>
+          <p>&copy; 2019 Made with React by Jul W</p>
         </footer>
       </div>
     )
@@ -125,6 +124,8 @@ const mapDispatchToProps = {
   updateFont,
   updateColor
 }
+
+export { StyleContainer as UnconnectedStyleContainer }
 
 export default connect(
   mapStateToProps,
