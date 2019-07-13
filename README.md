@@ -13,7 +13,7 @@ The app currently provides users with the following functions:
 ## How to use
 1. git clone the repo
 2. cd into the local folder
-3. `yarn start` to view the app locally
+3. `yarn start` and open browser to go to localhost:8080 to view the app locally
 4. run tests by `yarn test`
 
 ## Technology
