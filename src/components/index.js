@@ -1,1 +1,1 @@
-export StyleContainer from "./StyleContainer"
+export StyleContainer from "./styleContainer"

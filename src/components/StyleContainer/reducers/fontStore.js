@@ -1,6 +1,6 @@
 import { createSelector } from "reselect"
 import { get, sortBy } from "lodash"
-import { createLoadingSelector } from "reducers/RequestStatus/loadingStore"
+import { createLoadingSelector } from "reducers/requestStatus/loadingStore"
 import { formatRandomFont } from "../functions"
 import ActionTypes from "../actions/actionTypes"
 

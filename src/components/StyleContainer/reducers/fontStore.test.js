@@ -18,12 +18,6 @@ const mockFonts = [
   }
 ]
 
-const mockFont = {
-  family: "Times New Roman",
-  category: "serif",
-  variant: { regular: "regular" }
-}
-
 const mockSelectedFont = {
   left: {
     family: "roboto",

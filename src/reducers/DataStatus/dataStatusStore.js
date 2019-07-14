@@ -8,7 +8,7 @@ const defaultState = {
   message: ""
 }
 
-export default function errorStore(state = defaultState, action) {
+export default function DataStatusStore(state = defaultState, action) {
   const { type, message } = action
   switch (type) {
     case ActionTypes.HANDLE_DATA_ERROR:

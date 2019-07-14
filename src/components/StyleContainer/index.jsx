@@ -3,7 +3,7 @@ import { shape, arrayOf, func, string, bool } from "prop-types"
 import { Helmet } from "react-helmet"
 import { connect } from "react-redux"
 import { URL_BEGINNING, URL_END } from "constants/fontUrl"
-import { dataErrorSelector } from "reducers/DataStatus/selectors"
+import { dataErrorSelector } from "reducers/dataStatus/selectors"
 import { getFonts, getColor, updateFont, updateColor } from "./actions"
 import {
   fontsSelector,

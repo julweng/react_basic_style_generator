@@ -2,7 +2,7 @@ import { createSelector } from "reselect"
 import { get, sample } from "lodash"
 import initialColorScheme from "constants/initialColorScheme"
 
-import ActionTypes from "components/StyleContainer/actions/actionTypes"
+import ActionTypes from "components/styleContainer/actions/actionTypes"
 
 const getStore = rootState => get(rootState, "StyleStore.ColorStore", {})
 
