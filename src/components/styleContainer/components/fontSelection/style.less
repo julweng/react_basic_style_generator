@@ -1,0 +1,218 @@
+@import "~styles/common.less";
+
+@margin: 2rem;
+@smallMargin: @margin - 1;
+@smallestMargin: @smallMargin - 0.6;
+@border: 1px solid @darkerWhite;
+@padding: 1rem;
+@smallPadding: @padding - 0.5rem;
+
+.font__selection__container {
+  background-color: @backgroundColor;
+  color: @textColor;
+  border-radius: @borderRadius;
+  text-align: left;
+  font-size: 1.25rem;
+  padding: 1rem;
+  position: fixed;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  font-family: @defaultFont;
+  z-index: 4;
+
+  &.left {
+    top: 28%;
+    left: 9%;
+  }
+
+  &.right {
+    top: 28%;
+    right: 9%;
+  }
+
+  .selected__font {
+    margin: @smallMargin (@smallMargin * 5);
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: @border;
+    border-radius: @borderRadius;
+    cursor: pointer;
+    z-index: 5;
+
+    span {
+      align-self: center;
+      font-size: 1.2rem;
+      margin-left: 1rem;
+    }
+
+    span:last-child {
+      color: @greenBtnColor;
+    }
+  }
+
+  .font__options {
+    margin: @smallMargin, @smallestMargin;
+    position: fixed;
+    top: 38%;
+    left: 7.8%;
+    background-color: @backgroundColor;
+    border: @border;
+    border-radius: @borderRadius;
+    padding: 0.5rem;
+    z-index: 5;
+    width: 31%;
+    min-height: 20%;
+    max-height: 30%;
+    overflow: auto;
+
+    li {
+      list-style: none;
+      cursor: pointer;
+    }
+  }
+
+  .variant__options {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0 2rem;
+    margin: @smallMargin;
+    max-height: 240px;
+
+    [type="radio"]:checked,
+    [type="radio"]:not(:checked) {
+      position: absolute;
+      left: -9999px;
+    }
+    [type="radio"]:checked + label,
+    [type="radio"]:not(:checked) + label {
+      position: relative;
+      padding-left: 28px;
+      cursor: pointer;
+      line-height: 20px;
+      display: inline-block;
+      color: @textColor;
+    }
+    [type="radio"]:checked + label:before,
+    [type="radio"]:not(:checked) + label:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #ddd;
+      border-radius: 100%;
+      background: @backgroundColor;
+    }
+    [type="radio"]:checked + label:after,
+    [type="radio"]:not(:checked) + label:after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: @greenBtnColor;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border-radius: 100%;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+    [type="radio"]:not(:checked) + label:after {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    [type="radio"]:checked + label:after {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+
+  .submit__font__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: @smallMargin;
+
+    button:first-child {
+      .selection-btn-mixin(@greyBtnColor, @textColor, @darkerWhite);
+    }
+
+    button:last-child {
+      .selection-btn-mixin(@greenBtnColor, @backgroundColor, @darkerGreen);
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .font__selection__container {
+    padding: @smallPadding;
+    width: 40%;
+
+    &.left {
+      top: 23%;
+      left: 3%;
+    }
+  
+    &.right {
+      top: 23%;
+      right: 3%;
+    }
+
+    .selected__font {
+      margin: 1rem 2.5rem;
+    }
+  }
+
+  .submit__font__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: @smallMargin;
+
+    button {
+      width: 40% !important;
+    } 
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .font__selection__container {
+    width: 85%;
+
+    &.left {
+      top: 28%;
+      left: 5%;
+    }
+  
+    &.right {
+      top: 28%;
+      right: 0;
+      left: 5%
+    }
+
+    .selected__font {
+      margin: 1rem 2.5rem;
+    }
+  }
+
+  .submit__font__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: @smallMargin;
+
+    button {
+      width: 40% !important;
+    } 
+  }
+}
+
+

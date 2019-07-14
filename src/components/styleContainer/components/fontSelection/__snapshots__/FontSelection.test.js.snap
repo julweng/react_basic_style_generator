@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FontSelection Should render without crashing 1`] = `
+<div>
+  <div
+    class="font__selection__container left"
+  >
+    <div
+      class="selected__font"
+    >
+      <span>
+        Arial
+      </span>
+      <span>
+        ▼
+      </span>
+    </div>
+    <div
+      class="variant__options"
+    >
+      <div
+        class="font__variant"
+      >
+        <input
+          checked=""
+          id="regular"
+          name="regular"
+          type="radio"
+          value="regular"
+        />
+        <label
+          for="regular"
+        >
+          regular
+        </label>
+      </div>
+      <div
+        class="font__variant"
+      >
+        <input
+          id="100italic"
+          name="100italic"
+          type="radio"
+          value="100italic"
+        />
+        <label
+          for="100italic"
+        >
+          thin italic
+        </label>
+      </div>
+    </div>
+    <div
+      class="submit__font__btn"
+    >
+      <button>
+        Cancel
+      </button>
+      <button>
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+`;

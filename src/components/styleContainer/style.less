@@ -1,0 +1,48 @@
+@import "~styles/common.less";
+
+@textColor: #F7F7FF;
+@backgroundColor: #6b6b6e;
+@darkerBackgroundColor: darken(@backgroundColor, 20%);
+@textShadow: darken(@darkerBackgroundColor, 50%);
+
+.main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+
+  header, footer {
+    font-family: @defaultFont;
+  }
+
+  header {
+    display: flex;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: left;
+    padding-left: 3.5rem;
+    background-color: @backgroundColor;
+    color: @textColor;
+    text-shadow: 2px 2px #000;
+    
+    h1 {
+      margin: 1.5rem 0; 
+    }
+  }
+
+  .style__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+
+  footer {
+    background-color: @darkerBackgroundColor;
+    color: @textColor;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+}
+

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyleContainer Should render without crashing 1`] = `
+<div>
+  <div
+    class="main"
+  >
+    <div />
+    <header>
+      <h1>
+        ColoText
+      </h1>
+    </header>
+    <div
+      class="style__container"
+    >
+      <div
+        class="StyleItemMock"
+      >
+        StyleItemMock
+      </div>
+      <div
+        class="StyleItemMock"
+      >
+        StyleItemMock
+      </div>
+    </div>
+    <footer>
+      <p>
+        © 2019 Made with React by Jul W
+      </p>
+    </footer>
+  </div>
+</div>
+`;

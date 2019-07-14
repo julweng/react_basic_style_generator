@@ -1,0 +1,119 @@
+@import "~styles/common.less";
+
+.color__selection__container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  font-size: 1.25rem;
+  font-family: @defaultFont;
+  background-color: @backgroundColor;
+  border-radius: @borderRadius;
+  color: @textColor;
+  width: 30%;
+  border: none;
+  z-index: 5;
+
+  &.left {
+    top: 28%;
+    left: 9%;
+  }
+
+  &.right {
+    top: 28%;
+    right: 9%;
+  }
+
+  .color__selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: left;
+
+    .background__selection > div:first-child,
+    .text__selection > div:first-child {
+      margin: 1rem;
+    }
+
+    .chrome-picker {
+      width: 130% !important;
+      box-shadow: rgba(73, 72, 72, 0.3) 0px 0px 1px,  rgba(73, 72, 72, 0.3) 0px 2px 4px;
+      border-radius: @borderRadius;
+    }
+  }
+
+  .submit__color__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem;
+
+    button:first-child {
+      .selection-btn-mixin(@greyBtnColor, @textColor, @darkerWhite);
+    }
+
+    button:last-child {
+      .selection-btn-mixin(@greenBtnColor, @backgroundColor, @darkerGreen);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .color__selection__container {
+    width: 40%;
+
+    &.left {
+      top: 26%;
+      left: 5%;
+    }
+  
+    &.right {
+      top: 26%;
+      right: 5%;
+    }
+
+    .color__selection {
+      flex-direction: column;
+      padding-left: 2rem;
+      .chrome-picker {
+        width: 120%;
+      }
+    }
+    .submit__color__btn {
+      flex-direction: column;
+      button {
+        width: 95% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .color__selection__container {
+    width: 85%;
+
+    &.left {
+      top: 21%;
+      left: 7%;
+    }
+  
+    &.right {
+      top: 21%;
+      right: 0;
+      left: 7%;
+    }
+
+    .color__selection {
+      flex-direction: column;
+      padding-left: 2.5rem;
+      .chrome-picker {
+        width: 120%;
+      }
+    }
+    .submit__color__btn {
+      flex-direction: column;
+      button {
+        width: 95% !important;
+      }
+    }
+  }
+}

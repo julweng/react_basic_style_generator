@@ -1,0 +1,59 @@
+.mask {
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  background-color: #e0e0e0;
+  position: absolute;
+  z-index: 4;
+  visibility: visible;
+  border-radius: 4px;
+  overflow: hidden;
+
+  &:not(.loaded) {
+    opacity: 0.8;
+
+    &:after {
+      background-color: #f9f9f9;
+      position: absolute;
+      transform-origin: left;
+      content: " ";
+      top: 50%;
+      left: 0%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      width: 25px;
+      height: 50%;
+      animation: ripple 1.75s infinite;
+    }
+  }
+
+  &.loaded {
+    pointer-events: none;
+    animation: unmask 1s ease-in-out 0.1s forwards;
+  }
+
+}
+
+@keyframes unmask {
+  to {
+    opacity: 0;
+  }
+
+  from {
+    opacity: 1;
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(50);
+    opacity: 0.4;
+  }
+
+  from {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
