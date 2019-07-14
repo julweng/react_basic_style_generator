@@ -2,8 +2,6 @@ import axios from "axios"
 import ActionTypes from "./actionTypes"
 import { handleDataError } from "actions"
 
-const API_KEY = process.env.API_KEY
-
 const getFontListRequest = () => {
   return {
     type: ActionTypes.GET_FONTS_REQUEST
@@ -26,7 +24,7 @@ const getFontListFailure = err => {
 const getFontList = (selectedFont = {}) => {
   return dispatch => {
     dispatch(getFontListRequest())
-
+    const API_KEY = process.env.API_KEY
     return axios
       .get(`https://www.googleapis.com/webfonts/v1/webfonts?key=${API_KEY}`)
       .then(

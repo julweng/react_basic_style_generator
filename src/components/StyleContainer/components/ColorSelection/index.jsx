@@ -11,7 +11,9 @@ const ColorSelection = ({ side, close, color, updateColor }) => {
   const handleTextColorChange = color => setTextColor(color)
 
   const handleSubmitColor = () => {
-    updateColor(side, textColor.hex, background.hex)
+    const text = typeof textColor === "string" ? textColor : textColor.hex
+    const back = typeof background === "string" ? background : background.hex
+    updateColor(side, text, back)
     close()
   }
 
