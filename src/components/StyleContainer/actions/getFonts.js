@@ -25,7 +25,7 @@ const getFontList = (selectedFont = {}) => {
   return dispatch => {
     dispatch(getFontListRequest())
     const API_KEY = process.env.API_KEY
-    console.log(process.env)
+
     return axios
       .get(`https://www.googleapis.com/webfonts/v1/webfonts?key=${API_KEY}`)
       .then(
