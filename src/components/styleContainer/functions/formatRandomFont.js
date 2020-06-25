@@ -1,7 +1,7 @@
 import { sample } from "lodash"
 import { formatFontCategory, formatFontVariants } from "./index"
 
-const formatRandomFont = fonts => {
+const formatRandomFont = (fonts) => {
   if (!fonts.length) {
     return {}
   }

@@ -1,7 +1,7 @@
 import { createSelector } from "reselect"
 import { get } from "lodash"
 
-const getStore = rootState => rootState.RequestStatusStore.LoadingStore
+const getStore = (rootState) => rootState.RequestStatusStore.LoadingStore
 
 const defaultState = {}
 
@@ -49,14 +49,13 @@ export default function LoadingStore(state = defaultState, action) {
  * @param  {string|array}  input  request name or array of request names
  * @return {boolean}       whether some of the requests are loading
  */
-export const createLoadingSelector = input => {
+export const createLoadingSelector = (input) => {
   // normalizes input to an array
   const actions = Array.isArray(input) ? input : [input]
 
   // returns a new selector to tell if some of the actions are loading
-  return createSelector(
-    getStore,
-    state => actions.some(action => get(state, action, {}))
+  return createSelector(getStore, (state) =>
+    actions.some((action) => get(state, action, {}))
   )
 }
 
@@ -66,8 +65,5 @@ export const createLoadingSelector = input => {
  * @param  {string}  actionName)  single action name
  * @return {object}               object with id keys and boolean loading states
  */
-export const createIdsLoadingSelector = actionName =>
-  createSelector(
-    getStore,
-    state => get(state, actionName, {})
-  )
+export const createIdsLoadingSelector = (actionName) =>
+  createSelector(getStore, (state) => get(state, actionName, {}))

@@ -15,8 +15,8 @@ export default function getMockPropsOf(component) {
 
   const firstInstance = () => first(props)
   const lastInstance = () => last(props)
-  const nthInstance = nthIndex => get(props, getActualIndex(nthIndex))
-  const findInstance = fn => props.find(fn)
+  const nthInstance = (nthIndex) => get(props, getActualIndex(nthIndex))
+  const findInstance = (fn) => props.find(fn)
 
   return {
     firstInstance,
@@ -45,7 +45,7 @@ function getMockOf(component) {
 
   // a component is called with an array argument as [props, {}]
   // we only want the first argument which is the first element of the array
-  const firstArg = args => first(args)
+  const firstArg = (args) => first(args)
   const props = calls.map(firstArg)
 
   return {

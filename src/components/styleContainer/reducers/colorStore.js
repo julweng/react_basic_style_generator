@@ -4,7 +4,7 @@ import initialColorScheme from "constants/initialColorScheme"
 
 import ActionTypes from "components/styleContainer/actions/actionTypes"
 
-const getStore = rootState => get(rootState, "StyleStore.ColorStore", {})
+const getStore = (rootState) => get(rootState, "StyleStore.ColorStore", {})
 
 const defaultState = {
   color: {
@@ -42,12 +42,10 @@ export default function ColorStore(state = defaultState, action = {}) {
   }
 }
 
-export const leftColorSelector = createSelector(
-  getStore,
-  state => get(state, "color.left", {})
+export const leftColorSelector = createSelector(getStore, (state) =>
+  get(state, "color.left", {})
 )
 
-export const rightColorSelector = createSelector(
-  getStore,
-  state => get(state, "color.right", {})
+export const rightColorSelector = createSelector(getStore, (state) =>
+  get(state, "color.right", {})
 )

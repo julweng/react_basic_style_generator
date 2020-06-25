@@ -1,7 +1,7 @@
 import { createSelector } from "reselect"
 import { get } from "lodash"
 
-const getStore = rootState => rootState.RequestStatusStore.ErrorStore
+const getStore = (rootState) => rootState.RequestStatusStore.ErrorStore
 
 const defaultState = {}
 
@@ -49,14 +49,13 @@ export default function ErrorStore(state = defaultState, action) {
  * @param  {string|array}  input  request name or array of request names
  * @return {boolean}       whether some of the requests have failed
  */
-export const createErrorSelector = input => {
+export const createErrorSelector = (input) => {
   // normalizes input to an array
   const actions = Array.isArray(input) ? input : [input]
 
   // returns a new selector to tell if some of the actions have failed
-  return createSelector(
-    getStore,
-    state => actions.some(action => get(state, action))
+  return createSelector(getStore, (state) =>
+    actions.some((action) => get(state, action))
   )
 }
 
@@ -66,8 +65,5 @@ export const createErrorSelector = input => {
  * @param  {string}  actionName)  single action name
  * @return {object}               object with id keys and boolean error states
  */
-export const createIdsErrorSelector = actionName =>
-  createSelector(
-    getStore,
-    state => get(state, actionName) || {}
-  )
+export const createIdsErrorSelector = (actionName) =>
+  createSelector(getStore, (state) => get(state, actionName) || {})

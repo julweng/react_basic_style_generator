@@ -4,7 +4,7 @@ import { createLoadingSelector } from "reducers/requestStatus/loadingStore"
 import { formatRandomFont } from "../functions"
 import ActionTypes from "../actions/actionTypes"
 
-const getStore = rootState => get(rootState, "StyleStore.FontStore", {})
+const getStore = (rootState) => get(rootState, "StyleStore.FontStore", {})
 
 const defaultState = {
   fonts: [
@@ -47,19 +47,16 @@ export default function FontStore(state = defaultState, action = {}) {
   }
 }
 
-export const fontsSelector = createSelector(
-  getStore,
-  state => get(state, "fonts", [])
+export const fontsSelector = createSelector(getStore, (state) =>
+  get(state, "fonts", [])
 )
 
-export const leftFontSelector = createSelector(
-  getStore,
-  state => get(state, "selectedFont.left", {})
+export const leftFontSelector = createSelector(getStore, (state) =>
+  get(state, "selectedFont.left", {})
 )
 
-export const rightFontSelector = createSelector(
-  getStore,
-  state => get(state, "selectedFont.right", {})
+export const rightFontSelector = createSelector(getStore, (state) =>
+  get(state, "selectedFont.right", {})
 )
 
 export const getFontsLoadingSelector = createLoadingSelector("GET_FONTS")

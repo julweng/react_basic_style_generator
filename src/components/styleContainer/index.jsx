@@ -108,7 +108,7 @@ StyleContainer.propTypes = {
   isLoadingFonts: bool
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   fonts: fontsSelector(state),
   isLoadingFonts: getFontsLoadingSelector(state),
   leftFont: leftFontSelector(state),
@@ -127,7 +127,4 @@ const mapDispatchToProps = {
 
 export { StyleContainer as UnconnectedStyleContainer }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(StyleContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(StyleContainer)

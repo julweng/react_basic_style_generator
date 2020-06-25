@@ -1,6 +1,6 @@
 import { isEmpty } from "lodash"
 
-const extractFontStyle = variant => {
+const extractFontStyle = (variant) => {
   if (isEmpty(variant)) {
     return
   }

@@ -61,7 +61,7 @@ describe("ColorStore reducer", () => {
 })
 
 describe("ColorStore selectors", () => {
-  const createRootState = color => ({
+  const createRootState = (color) => ({
     StyleStore: {
       ColorStore: {
         color

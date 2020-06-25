@@ -1,4 +1,4 @@
-const convertVariantToOption = variant => {
+const convertVariantToOption = (variant) => {
   switch (variant) {
     case "100":
       return "thin"

@@ -46,5 +46,6 @@ module.exports = {
       __testing__: path.resolve(__dirname, "__testing__"),
       __mocks__: path.resolve(__dirname, "__mocks__")
     }
-  }
+  },
+  devtool: "inline-source-map"
 }

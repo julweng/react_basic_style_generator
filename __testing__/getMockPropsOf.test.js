@@ -97,19 +97,22 @@ describe("getMockPropsOf", () => {
 
     const { findInstance } = getMockPropsOf(MockedComponent)
 
-    expect(findInstance(i => i.id === 1)).toEqual({ id: 1, name: "Chewbacca" })
-    expect(findInstance(i => i.id === 2)).toEqual({ id: 2, name: "Han Solo" })
-    expect(findInstance(i => i.id === 3)).toEqual({ id: 3, name: "Greedo" })
-
-    expect(findInstance(i => i.name === "Chewbacca")).toEqual({
+    expect(findInstance((i) => i.id === 1)).toEqual({
       id: 1,
       name: "Chewbacca"
     })
-    expect(findInstance(i => i.name === "Han Solo")).toEqual({
+    expect(findInstance((i) => i.id === 2)).toEqual({ id: 2, name: "Han Solo" })
+    expect(findInstance((i) => i.id === 3)).toEqual({ id: 3, name: "Greedo" })
+
+    expect(findInstance((i) => i.name === "Chewbacca")).toEqual({
+      id: 1,
+      name: "Chewbacca"
+    })
+    expect(findInstance((i) => i.name === "Han Solo")).toEqual({
       id: 2,
       name: "Han Solo"
     })
-    expect(findInstance(i => i.name === "Greedo")).toEqual({
+    expect(findInstance((i) => i.name === "Greedo")).toEqual({
       id: 3,
       name: "Greedo"
     })

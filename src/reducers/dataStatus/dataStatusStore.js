@@ -2,7 +2,7 @@ import { createSelector } from "reselect"
 import { get } from "lodash"
 import ActionTypes from "actions/actionTypes"
 
-const getStore = rootState => get(rootState, "DataStatusStore", {})
+const getStore = (rootState) => get(rootState, "DataStatusStore", {})
 
 const defaultState = {
   message: ""
@@ -21,7 +21,6 @@ export default function DataStatusStore(state = defaultState, action) {
   }
 }
 
-export const dataErrorSelector = createSelector(
-  getStore,
-  state => get(state, "message", "")
+export const dataErrorSelector = createSelector(getStore, (state) =>
+  get(state, "message", "")
 )

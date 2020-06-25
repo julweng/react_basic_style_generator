@@ -1,4 +1,4 @@
-const generateMsg = type => `select a ${type}`
+const generateMsg = (type) => `select a ${type}`
 
 const generateCssRule = (str, type) => {
   if (type === "font family") {

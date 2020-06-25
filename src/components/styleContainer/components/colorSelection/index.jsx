@@ -7,8 +7,8 @@ const ColorSelection = ({ side, close, color, updateColor }) => {
   const [background, setBackground] = useState(color.backgroundColor)
   const [textColor, setTextColor] = useState(color.color)
 
-  const handleBackgroundChange = color => setBackground(color)
-  const handleTextColorChange = color => setTextColor(color)
+  const handleBackgroundChange = (color) => setBackground(color)
+  const handleTextColorChange = (color) => setTextColor(color)
 
   const handleSubmitColor = () => {
     const text = typeof textColor === "string" ? textColor : textColor.hex

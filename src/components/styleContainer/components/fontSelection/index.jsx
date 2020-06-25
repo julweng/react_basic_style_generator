@@ -15,13 +15,13 @@ const FontSelection = ({ close, font, fonts, updateFont, side }) => {
 
   const toggle = () => setFontOptionsOpen(!fontOptionsOpen)
 
-  const onChangeFont = family => {
-    const newFont = formatRandomFont(fonts.filter(f => f.family === family))
+  const onChangeFont = (family) => {
+    const newFont = formatRandomFont(fonts.filter((f) => f.family === family))
     setSelectedFont(newFont)
     setFontOptionsOpen(false)
   }
 
-  const onChangeVariant = variant => {
+  const onChangeVariant = (variant) => {
     setSelectedVariant(variant)
   }
 
@@ -52,7 +52,7 @@ const FontSelection = ({ close, font, fonts, updateFont, side }) => {
         </div>
       )}
       <div className="variant__options">
-        {selectedFont.variants.map(v => {
+        {selectedFont.variants.map((v) => {
           const [variantKey] = Object.keys(v)
           const [variantVal] = Object.values(v)
 
@@ -64,7 +64,7 @@ const FontSelection = ({ close, font, fonts, updateFont, side }) => {
                 name={variantKey}
                 value={variantKey}
                 checked={compareVariants(v, selectedVariant)}
-                onChange={e => onChangeVariant(e.target.value)}
+                onChange={(e) => onChangeVariant(e.target.value)}
               />
               <label htmlFor={variantKey}>{variantVal}</label>
             </div>

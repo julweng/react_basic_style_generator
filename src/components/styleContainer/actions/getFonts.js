@@ -14,7 +14,7 @@ const getFontListSuccess = (fonts, selectedFont) => ({
   selectedFont
 })
 
-const getFontListFailure = err => {
+const getFontListFailure = (err) => {
   return {
     type: ActionTypes.GET_FONTS_FAILURE,
     err
@@ -22,22 +22,22 @@ const getFontListFailure = err => {
 }
 
 const getFontList = (selectedFont = {}) => {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(getFontListRequest())
     const API_KEY = process.env.API_KEY
     console.log(process.env)
     return axios
       .get(`https://www.googleapis.com/webfonts/v1/webfonts?key=${API_KEY}`)
       .then(
-        res => {
+        (res) => {
           dispatch(getFontListSuccess(res.data.items, selectedFont))
         },
-        err => {
+        (err) => {
           dispatch(getFontListFailure(err))
           dispatch(handleDataError(err.message))
         }
       )
-      .catch(err => dispatch(handleDataError(err.message)))
+      .catch((err) => dispatch(handleDataError(err.message)))
   }
 }
 
